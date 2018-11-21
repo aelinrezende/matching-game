@@ -5,4 +5,6 @@
 .card {
 	list-style: none;
 	text-decoration: none;
+	width: 150px;
+	height: 150px;
 }
