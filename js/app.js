@@ -13,13 +13,24 @@ function shuffle(array) {
 }
 
 function createCard(cardClass){
-    $("ul.grid").append(`<li class="card"><i class="fa ${cardClass}"></i></li>`);
+    $("ul.grid").append(`<li class="card"><i class="closed fa ${cardClass}"></i></li>`);
 }
 
 function positioner(){
     shuffle(cardList).forEach(createCard);
 }
 
+
+
+let rotate = function () {
+	$('li').on('click', function() {
+		let i = $(this).children().toggleClass("closed show")
+		$(this).toggleClass("open")
+	}
+)}
+
+
 // Iniciador
 positioner()
 positioner()
+rotate()
