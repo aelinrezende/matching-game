@@ -2,6 +2,11 @@
 	width: 700px;
 }
 
+.grid {
+	flex-wrap: wrap;
+	display: flex;
+}
+
 .card {
 	list-style: none;
 	text-decoration: none;
