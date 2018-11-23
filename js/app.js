@@ -35,5 +35,23 @@ $('.card').click(function() {
 	    $('.moves').text(moves);
 		$(this).addClass('open');
 	    opened.push($(this));
+	    if (opened.length % 2 == 0) {
+	        setTimeout(card_match, 1000);
+	    }
 	}
 });
+
+// verificando "match" de cartas
+function card_match() {
+    if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
+        opened[opened.length - 2].removeClass('open');
+        opened[opened.length - 2].addClass('match');
+        opened[opened.length - 1].removeClass('open');
+        opened[opened.length - 1].addClass('match');
+    } else {
+        opened[opened.length - 1].removeClass('open');
+        opened[opened.length - 2].removeClass('open');
+        opened.pop();
+        opened.pop();
+    }
+}
