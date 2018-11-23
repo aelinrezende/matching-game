@@ -22,6 +22,7 @@
   	transition: all .8s;
   	color: #fff;
   	transform: rotateY(180deg);
+  	border-radius: 10px;
 }
 
 .open {
