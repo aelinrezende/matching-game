@@ -64,15 +64,11 @@
 }
 
 .shakeCorrect {
-    animation: shakeDistortion 1s ease;
+    animation: shakeDistortion .5s ease;
 }
 
 @keyframes shakeDistortion {
-    0%   { transform: scale(1,1)      translateY(0); }
-        10%  { transform: scale(1.1,.9)   translateY(0); }
-        30%  { transform: scale(.9,1.1)   translateX(0px); }
-        50%  { transform: scale(1.05,.95) translateX(0px); }
-        57%  { transform: scale(1,1)      translateY(0px); }
-        64%  { transform: scale(1,1)      translateY(0); }
-        100% { transform: scale(1,1)      translateY(0); }
+    0%   { transform: scale(1,-1)}
+    50%  { transform: scale(1,1)}
+
 }
