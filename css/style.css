@@ -1,6 +1,5 @@
 .container {
-	width: 700px;
-	perspective: 1000;
+	display: flex;
 }
 
 .grid {
@@ -37,3 +36,4 @@
 	display: 1;
 	transition: opacity .5s;
 }
+
