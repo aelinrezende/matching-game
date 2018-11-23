@@ -35,6 +35,7 @@
 }
 
 .match {
+	transform: rotateY(0);
     cursor: default;
     background-color: #02ccba;
     font-size: 40px;
