@@ -28,11 +28,12 @@
 
 .open {
 	transform: rotateY(0);
+	font-size: 40px;
 }
 
 .match {
     cursor: default;
     background-color: #02ccba;
-    font-size: 33px;
+    font-size: 40px;
 }
 
