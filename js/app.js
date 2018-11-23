@@ -43,17 +43,25 @@ $('.card').click(function() {
 // verificando "match" de cartas
 function card_match() {
     if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
+    	opened[opened.length - 2].addClass('shakeCorrect').delay(200).queue(function( next ){
+	    $(this).toggleClass('shakeWrong');
+	    next();
+});
+    	opened[opened.length - 1].addClass('shakeCorrect').delay(200).queue(function( next ){
+	    $(this).toggleClass('shakeWrong');
+	    next();
+});
         opened[opened.length - 2].removeClass('open');
         opened[opened.length - 2].addClass('match');
         opened[opened.length - 1].removeClass('open');
         opened[opened.length - 1].addClass('match');
     } else {
-        opened[opened.length - 1].addClass('shake wrong').delay(200).queue(function( next ){
-	    $(this).toggleClass('shake');
+        opened[opened.length - 1].addClass('shakeWrong wrong').delay(200).queue(function( next ){
+	    $(this).toggleClass('shakeWrong');
 	    next();
 });
-        opened[opened.length - 2].addClass('shake wrong').delay(200).queue(function( next ){
-	    $(this).toggleClass('shake');
+        opened[opened.length - 2].addClass('shakeWrong wrong').delay(200).queue(function( next ){
+	    $(this).toggleClass('shakeWrong');
 	    next();
 });
         opened[opened.length - 1].delay(250).queue(function( next ){
