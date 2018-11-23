@@ -5,6 +5,38 @@
     align-items: center;
 }
 
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .grid {
 	flex-wrap: wrap;
 	display: flex;
@@ -32,6 +64,7 @@
 .open {
 	transform: rotateY(0);
 	font-size: 40px;
+	background-color: #02b3e4;
 }
 
 .match {
