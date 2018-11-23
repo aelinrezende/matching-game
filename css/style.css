@@ -8,6 +8,7 @@
 .grid {
 	flex-wrap: wrap;
 	display: flex;
+	width: 660px;
 }
 
 .card {
