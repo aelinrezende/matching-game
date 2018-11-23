@@ -16,7 +16,7 @@
 	background-color: #000;
 	margin: 5px;
 	transform-style: preserve-3d;
-  	transition: all 1.0s;
+  	transition: all .8s;
   	color: #fff;
   	transform: rotateY(180deg);
 }
@@ -27,11 +27,13 @@
 
 .closed {
 	opacity: 0;
-	transition: all 5s;
+	display: 0;
+	visibility: hidden;
+	transition: all 2s;
 }
 
 .show {
 	opacity: 1;
-	transition: opacity 1.0s;
+	display: 1;
+	transition: opacity .5s;
 }
-

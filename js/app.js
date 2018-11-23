@@ -1,4 +1,8 @@
 const cardList = ["fa-birthday-cake", "fa-angry", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+let openCard = false;
+var moves = 0;
+var opened = [];
+var timer = 0;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -12,25 +16,24 @@ function shuffle(array) {
     return array;
 }
 
-function createCard(cardClass){
-    $("ul.grid").append(`<li class="card"><i class="closed fa ${cardClass}"></i></li>`);
+function createCard(cardClass) {
+    $("ul.grid").append(`<li class="card"><i class="fa ${cardClass}"></i></li>`);
 }
 
 function positioner(){
     shuffle(cardList).forEach(createCard);
 }
 
-
-
-let rotate = function () {
-	$('li').on('click', function() {
-		let i = $(this).children().toggleClass("closed show")
-		$(this).toggleClass("open")
-	}
-)}
-
-
 // Iniciador
 positioner()
 positioner()
-rotate()
+
+// verificando se a carta foi clicada
+$('.card').click(function() {
+	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
+		moves++;
+	    $('.moves').text(moves);
+		$(this).addClass('open');
+	    opened.push($(this));
+	}
+});
