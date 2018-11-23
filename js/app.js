@@ -48,20 +48,20 @@ function card_match() {
         opened[opened.length - 1].removeClass('open');
         opened[opened.length - 1].addClass('match');
     } else {
-        opened[opened.length - 1].addClass('foo').delay(500).queue(function( next ){
-	    $(this).toggleClass('foo');
+        opened[opened.length - 1].addClass('shake wrong').delay(200).queue(function( next ){
+	    $(this).toggleClass('shake');
 	    next();
 });
-        opened[opened.length - 2].addClass('foo').delay(500).queue(function( next ){
-	    $(this).toggleClass('foo');
+        opened[opened.length - 2].addClass('shake wrong').delay(200).queue(function( next ){
+	    $(this).toggleClass('shake');
 	    next();
 });
-        opened[opened.length - 1].delay(600).queue(function( next ){
-	    $(this).toggleClass('open');
+        opened[opened.length - 1].delay(250).queue(function( next ){
+	    $(this).toggleClass('open wrong');
 	    next();
 });
-        opened[opened.length - 2].delay(600).queue(function( next ){
-	    $(this).toggleClass('open');
+        opened[opened.length - 2].delay(250).queue(function( next ){
+	    $(this).toggleClass('open wrong');
 	    next();
 });
         opened.pop();
