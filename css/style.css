@@ -30,16 +30,9 @@
 	transform: rotateY(0);
 }
 
-.closed {
-	opacity: 0;
-	display: 0;
-	visibility: hidden;
-	transition: all 2s;
-}
-
-.show {
-	opacity: 1;
-	display: 1;
-	transition: opacity .5s;
+.match {
+    cursor: default;
+    background-color: #02ccba;
+    font-size: 33px;
 }
 
