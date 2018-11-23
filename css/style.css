@@ -16,7 +16,6 @@
 	text-decoration: none;
 	width: 150px;
 	height: 150px;
-	background-color: #000;
 	margin: 5px;
 	transform-style: preserve-3d;
   	transition: all .8s;
@@ -24,6 +23,7 @@
   	transform: rotateY(180deg);
   	border-radius: 10px;
   	background-color: #2e3d49;
+  	font-size: 0;
 }
 
 .open {
