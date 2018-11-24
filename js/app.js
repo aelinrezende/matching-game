@@ -1,8 +1,8 @@
 const cardList = ["fa-birthday-cake", "fa-angry", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 let openCard = false;
-var moves = 0;
-var opened = [];
-var timer = 0;
+let moves = 0;
+let opened = [];
+let timer = 0;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -32,13 +32,40 @@ positioner()
 $('.card').click(function() {
 	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
 		moves++;
+		$('.moves').text(moves);
 		$(this).addClass('open');
 	    opened.push($(this));
 	    if (opened.length % 2 == 0) {
-	        setTimeout(card_match, 1000);
+	        setTimeout(card_match, 500);
 	    }
 	}
 });
+
+// Temporizador
+function countdown() {
+	function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.text(minutes + ":" + seconds);
+
+        if (++timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+	jQuery(function ($) {
+	    let sec = 0,
+	        display = $('#timer');
+	    startTimer(sec, display);
+	});
+}
 
 // verificando "match" de cartas
 function card_match() {
@@ -71,8 +98,12 @@ function card_match() {
         opened[opened.length - 2].delay(250).queue(function( next ){
 	    $(this).toggleClass('open wrong');
 	    next();
+	    opened.pop();
+    	opened.pop();
 });
-        opened.pop();
-        opened.pop();
+
     }
+  //   if (opened.length == 16) {
+		// modal()
+  //   }
 }
