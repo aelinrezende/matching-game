@@ -60,10 +60,12 @@ function countdown() {
 
 	jQuery(function ($) {
 	    let sec = 0,
-	        display = $('#timer');
+	        display = $('#Timer');
 	    startTimer(sec, display);
 	});
 }
+
+countdown()
 
 // verificando "match" de cartas
 function card_match() {

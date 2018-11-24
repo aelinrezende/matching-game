@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 body {
 	background-image: url('../img/geometry2.png');
+	font-family: 'Montserrat', sans-serif;
 }
 
 .container {
