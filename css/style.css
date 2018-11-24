@@ -26,6 +26,10 @@ body {
 	display: inline-block;
 }
 
+.restart {
+    float: right;
+    cursor: pointer;
+}
 .grid {
 	flex-wrap: wrap;
 	display: flex;

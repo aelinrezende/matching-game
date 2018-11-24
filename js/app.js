@@ -31,8 +31,6 @@ positioner()
 // verificando se a carta foi clicada
 $('.card').click(function() {
 	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
-		moves++;
-		$('.moves').text(moves);
 		$(this).addClass('open');
 	    opened.push($(this));
 	    if (opened.length % 2 == 0) {
@@ -70,6 +68,8 @@ function countdown() {
 // verificando "match" de cartas
 function card_match() {
     if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
+    	moves++;
+		$('.moves').text(moves);
     	opened[opened.length - 2].addClass('shakeCorrect').delay(200).queue(function( next ){
 	    $(this).toggleClass('shakeWrong');
 	    next();
@@ -83,6 +83,8 @@ function card_match() {
         opened[opened.length - 1].removeClass('open');
         opened[opened.length - 1].addClass('match');
     } else {
+    	moves++;
+		$('.moves').text(moves);
         opened[opened.length - 1].addClass('shakeWrong wrong').delay(200).queue(function( next ){
 	    $(this).toggleClass('shakeWrong');
 	    next();
