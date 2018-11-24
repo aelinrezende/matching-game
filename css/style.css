@@ -1,3 +1,7 @@
+body {
+	background-image: url('../img/geometry2.png');
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -41,6 +45,7 @@
 	flex-wrap: wrap;
 	display: flex;
 	width: 660px;
+	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
 }
 
 .card {
