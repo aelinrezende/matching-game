@@ -9,6 +9,23 @@ body {
     align-items: center;
 }
 
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.stars {
+	margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.stars li {
+	display: inline-block;
+}
+
 .grid {
 	flex-wrap: wrap;
 	display: flex;
