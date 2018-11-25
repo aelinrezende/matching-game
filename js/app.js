@@ -141,8 +141,24 @@ function card_match() {
 		button: "Restart",
 	}).then(function(restart) {
 		if (restart) {
+			moves = minutes = seconds = timer = 0;
+			timerFinish = false;
 			$('.card').removeClass('shakeCorrect match shakeWrong');
+			$('ul.stars').children('li').find('*').removeClass('fa-star-o');
+			$('ul.stars').children('li').find('*').addClass('fa-star');
+			opened = [];
 		}
 	})
 }
 }
+
+// restart
+
+$('.restart').click( function() {
+	moves = minutes = seconds = timer = 0;
+	timerFinish = false;
+	$('.card').removeClass('shakeCorrect match shakeWrong');
+	$('ul.stars').children('li').find('*').removeClass('fa-star-o');
+	$('ul.stars').children('li').find('*').addClass('fa-star');
+	opened = [];
+})
