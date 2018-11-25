@@ -65,8 +65,6 @@ function countdown() {
 	});
 }
 
-countdown()
-
 // verificando "match" de cartas
 function card_match() {
     if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
