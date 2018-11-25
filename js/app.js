@@ -28,6 +28,9 @@ function positioner(){
 positioner()
 positioner()
 
+// estrelas
+
+
 // verificando se a carta foi clicada
 $('.card').click(function() {
 	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
@@ -114,12 +117,12 @@ function card_match() {
 		closeOnClickOutside: false,
 		allowEscapeKey: false,
 		title: "Congratulations, You Won!",
-		text: `In ${minutes + ":" + seconds}, ${moves} Moves and ${starsOut.length} Stars`,
+		text: `In ${minutes + ":" + seconds}, ${moves} Moves and ${starsOut} Stars`,
 		icon: "success",
 		button: "Restart",
 	}).then(function(restart) {
 		if (restart) {
-			$('li').toggleClass('shakeCorrect match shakeWrong');
+			$('.card').removeClass('shakeCorrect match shakeWrong');
 		}
 	})
 }
