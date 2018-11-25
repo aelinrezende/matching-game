@@ -1,8 +1,8 @@
 const cardList = ["fa-birthday-cake", "fa-angry", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 let openCard = false;
 let moves = 0;
-let opened = [];
-let timer = 0;
+let opened = [], starsOut = ["far fa-star", "far fa-star", "far fa-star"];
+let timer, timerFinish = false, duration, seconds, minutes, display;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -42,8 +42,8 @@ $('.card').click(function() {
 // Temporizador
 function countdown() {
 	function startTimer(duration, display) {
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
+		timer = duration, minutes, seconds;
+    	setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
 
@@ -52,9 +52,9 @@ function countdown() {
 
         display.text(minutes + ":" + seconds);
 
-        if (++timer < 0) {
-            timer = duration;
-        }
+        if (timerFinish === false) {if (++timer < 0 && timerFinish) {
+                    timer = duration;
+                }}
     }, 1000);
 }
 
@@ -64,6 +64,8 @@ function countdown() {
 	    startTimer(sec, display);
 	});
 }
+
+countdown()
 
 // verificando "match" de cartas
 function card_match() {
@@ -105,7 +107,20 @@ function card_match() {
 });
 
     }
-  //   if (opened.length == 16) {
-		// modal()
-  //   }
+  if (opened.length == 16) {
+  	timerFinish = true;
+	swal({
+	  allowOutsideClick: false,
+	  closeOnClickOutside: false,
+	  allowEscapeKey: false,
+	  title: "Congratulations, You Won!",
+	  text: `In ${minutes + ":" + seconds}, ${moves} Moves and ${starsOut.length} Stars`,
+	  icon: "success",
+	  button: "Restart",
+}).then(function(isConfirm) {
+			if (isConfirm) {
+				window.location.reload();
+			}
+		});
+    }
 }
