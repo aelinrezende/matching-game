@@ -1,7 +1,7 @@
-const cardList = ["fa-birthday-cake", "fa-angry", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+const cardList = ["fa-birthday-cake", "fa-send", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 let openCard = false;
 let moves = 0;
-let opened = [], starsOut = ["far fa-star", "far fa-star", "far fa-star"];
+let opened = [], starsOut = 3;
 let timer, timerFinish = false, duration, seconds, minutes, display;
 
 function shuffle(array) {
@@ -28,12 +28,31 @@ function positioner(){
 positioner()
 positioner()
 
+
 // estrelas
+function countStars(){
+	if(moves === 8){
+		starsOut = 2
+		$('#Star3').addClass('fa-star-o');
+		$('#Star3').removeClass('fa-star');
+	}
+	if(moves === 11){
+		starsOut = 1
+		$('#Star2').addClass('fa-star-o');
+		$('#Star2').removeClass('fa-star');
+	} if(moves === 14){
+		starsOut = 0
+		$('#Star1').addClass('fa-star-o');
+		$('#Star1').removeClass('fa-star');
+	}
+}
+
 
 
 // verificando se a carta foi clicada
 $('.card').click(function() {
 	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
+		countStars()
 		$(this).addClass('open');
 	    opened.push($(this));
 	    if (opened.length % 2 == 0) {
