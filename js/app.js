@@ -107,20 +107,20 @@ function card_match() {
 });
 
     }
-  if (opened.length == 16) {
-  	timerFinish = true;
-	swal({
-	  allowOutsideClick: false,
-	  closeOnClickOutside: false,
-	  allowEscapeKey: false,
-	  title: "Congratulations, You Won!",
-	  text: `In ${minutes + ":" + seconds}, ${moves} Moves and ${starsOut.length} Stars`,
-	  icon: "success",
-	  button: "Restart",
-}).then(function(isConfirm) {
-			if (isConfirm) {
-				window.location.reload();
-			}
-		});
-    }
+  	if (opened.length == 16) {
+	  	timerFinish = true;
+		swal({
+		allowOutsideClick: false,
+		closeOnClickOutside: false,
+		allowEscapeKey: false,
+		title: "Congratulations, You Won!",
+		text: `In ${minutes + ":" + seconds}, ${moves} Moves and ${starsOut.length} Stars`,
+		icon: "success",
+		button: "Restart",
+	}).then(function(restart) {
+		if (restart) {
+			$('li').toggleClass('shakeCorrect match shakeWrong');
+		}
+	})
+}
 }
