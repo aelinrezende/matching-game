@@ -73,7 +73,7 @@ body {
   transform: rotateY(180deg);
   border-radius: 10px;
   background-color: #2e3d49;
-  font-size: 35px;
+  font-size: 0;
   align-items: center;
   justify-content: center;
   display: flex;
