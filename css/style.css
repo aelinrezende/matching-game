@@ -52,7 +52,7 @@ body {
 .grid {
 	flex-wrap: wrap;
 	display: flex;
-	width: 642px;
+	width: 620px;
 	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
 	padding: 25px;
 	border-radius: 10px;
