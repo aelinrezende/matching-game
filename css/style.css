@@ -66,7 +66,7 @@ body {
   height: 125px;
   margin: 10px;
   transform-style: preserve-3d;
-  transition: transform .8s, font-size 0.4s;
+  transition: transform .5s, font-size 0.2s;
   color: #fff;
   transform: rotateY(180deg);
   border-radius: 10px;
