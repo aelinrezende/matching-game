@@ -2,8 +2,8 @@ const cardList = ["fa-birthday-cake", "fa-send", "fa-anchor", "fa-bolt", "fa-cub
 let timer, duration, seconds, minutes;
 let moves = 0, starsOut = 3;
 let timerFinish = false
-let opened = []
 let toggle = true;
+let opened = []
 
 
 // Iniciador
