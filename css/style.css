@@ -84,6 +84,7 @@ body {
 	transform: rotateY(0);
 	font-size: 35px;
 	background-color: #02b3e4;
+  cursor: default;
 }
 
 .match {
@@ -91,6 +92,7 @@ body {
     cursor: default;
     background-color: #02ccba;
     font-size: 35px;
+    cursor: default;
 }
 
 .shakeWrong {
