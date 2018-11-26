@@ -27,7 +27,7 @@ function positioner(){
 // Iniciador
 positioner()
 positioner()
-
+verifyClick()
 
 // estrelas
 function countStars(){
@@ -50,7 +50,8 @@ function countStars(){
 
 
 // verificando se a carta foi clicada
-$('.card').click(function() {
+function verifyClick() {
+	$('.card').click(function() {
 	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
 		countStars()
 		$(this).addClass('open');
@@ -59,7 +60,8 @@ $('.card').click(function() {
 	        setTimeout(card_match, 500);
 	    }
 	}
-});
+})
+};
 
 // Temporizador
 function countdown() {
@@ -147,6 +149,10 @@ function card_match() {
 			$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 			$('ul.stars').children('li').find('*').addClass('fa-star');
 			opened = [];
+			$('li').remove()
+			positioner()
+			positioner()
+			verifyClick()
 		}
 	})
 }
