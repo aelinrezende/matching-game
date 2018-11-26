@@ -154,6 +154,7 @@ function card_match() {
 
     }
   	if (opened.length == 16) {
+  		$( ".container" ).css('opacity', '0')
 	  	timerFinish = true;
 		swal({
 		allowOutsideClick: false,
@@ -165,6 +166,7 @@ function card_match() {
 		button: "Restart",
 	}).then(function(restart) {
 		if (restart) {
+			$( ".container" ).css('opacity', '1')
 			$('.card').remove()
 			callPositioner()
 			verifyClick()
