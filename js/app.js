@@ -7,24 +7,21 @@ let timer, timerFinish = false, duration, seconds, minutes, display;
 // Iniciador
 
 
-function start() {swal({
-  title: "Welcome to the 'Memory Game'",
-  buttons: ["Modo Normal", "Modo Teste"],
-  dangerMode: true,
-})
-.then((normalMode) => {
-  if (normalMode) {
-  	$('.card').css("font-size", "0");
-  	callPositioner()
-	verifyClick()
-
-  } else {
-  	$('.card').css("font-size", "40px");
-  	callPositioner()
-	verifyClick()
-
+function start() {
+	swal({
+		title: "Welcome to the 'Memory Game'",
+		buttons: "START",
+		allowOutsideClick: false,
+		closeOnClickOutside: false,
+		allowEscapeKey: false,
+	}).then((normalMode) => {
+	if (normalMode) {
+		callPositioner()
+		verifyClick()
+		countdown()
   }
-})};
+})
+};
 
 start()
 
@@ -114,8 +111,6 @@ function countdown() {
 	    startTimer(sec, display);
 	});
 }
-
-countdown()
 
 // verificando "match" de cartas
 function card_match() {
