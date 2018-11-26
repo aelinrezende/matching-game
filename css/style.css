@@ -52,9 +52,9 @@ body {
 .grid {
 	flex-wrap: wrap;
 	display: flex;
-	width: 620px;
+	width: 650px;
 	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-	padding: 30px;
+	padding: 25px;
 	border-radius: 10px;
   justify-content: center;
 }
@@ -64,7 +64,7 @@ body {
   text-decoration: none;
   width: 125px;
   height: 125px;
-  margin: 5px;
+  margin: 10px;
   transform-style: preserve-3d;
   transition: transform .8s, font-size 0.4s;
   color: #fff;
