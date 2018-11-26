@@ -3,6 +3,7 @@ let timer, duration, seconds, minutes;
 let moves = 0, starsOut = 3;
 let timerFinish = false
 let opened = []
+let toggle = true;
 
 
 // Iniciador
@@ -111,6 +112,17 @@ $('.restart').click( function() {
 	opened = [];
 })
 
+// Função teste
+$('#TestMode').click(function () {
+	if (toggle === true) {
+		$('.card').css('font-size', '35px')
+		toggle = !toggle
+	} else {
+		$('.card').css('font-size', '0')
+		toggle = !toggle
+	}
+})
+
 // verificando se a carta foi clicada
 function verifyClick() {
 	$('.card').click(function() {
@@ -187,3 +199,4 @@ function card_match() {
 		})
 	}
 }
+
