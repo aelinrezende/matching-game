@@ -5,8 +5,28 @@ let opened = [], starsOut = 3;
 let timer, timerFinish = false, duration, seconds, minutes, display;
 
 // Iniciador
-callPositioner()
-verifyClick()
+
+
+function start() {swal({
+  title: "Welcome to the 'Memory Game'",
+  buttons: ["Modo Normal", "Modo Teste"],
+  dangerMode: true,
+})
+.then((normalMode) => {
+  if (normalMode) {
+  	$('.card').css("font-size", "0");
+  	callPositioner()
+	verifyClick()
+
+  } else {
+  	$('.card').css("font-size", "40px");
+  	callPositioner()
+	verifyClick()
+
+  }
+})};
+
+start()
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
