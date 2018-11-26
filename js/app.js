@@ -16,6 +16,7 @@ function start() {
 		allowEscapeKey: false,
 	}).then((normalMode) => {
 	if (normalMode) {
+		$( ".container" ).css('opacity', '1')
 		callPositioner()
 		verifyClick()
 		countdown()
@@ -164,6 +165,9 @@ function card_match() {
 		button: "Restart",
 	}).then(function(restart) {
 		if (restart) {
+			$('.card').remove()
+			callPositioner()
+			verifyClick()
 			moves = minutes = seconds = timer = 0;
 			starsOut = 3;
 			timerFinish = false;
@@ -171,9 +175,6 @@ function card_match() {
 			$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 			$('ul.stars').children('li').find('*').addClass('fa-star');
 			opened = [];
-			$('li').remove()
-			callPositioner()
-			verifyClick()
 		}
 	})
 }

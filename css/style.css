@@ -3,24 +3,26 @@
 body {
 	background-image: url('../img/geometry2.png');
 	font-family: 'Montserrat', sans-serif;
+
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-    align-items: center;
+  align-items: center;
+  opacity: 0;
 }
 
 .score-panel {
-    text-align: left;
-    width: 500px;
-    margin-bottom: 10px;
+  text-align: left;
+  width: 500px;
+  margin-bottom: 10px;
 }
 
 .stars {
-    display: inline-block;
-    margin: 0 12px 0 0;
+  display: inline-block;
+  margin: 0 12px 0 0;
 }
 
 .stars li {
@@ -40,8 +42,8 @@ body {
 }
 
 .restart {
-    float: right;
-    cursor: pointer;
+  float: right;
+  cursor: pointer;
 }
 .grid {
 	flex-wrap: wrap;
@@ -53,22 +55,22 @@ body {
 }
 
 .card {
-	list-style: none;
-	text-decoration: none;
-	width: 150px;
-	height: 150px;
-	margin: 5px;
-	transform-style: preserve-3d;
-  	transition: transform .8s, font-size 0.4s;
-  	color: #fff;
-  	transform: rotateY(180deg);
-  	border-radius: 10px;
-  	background-color: #2e3d49;
-	font-size: 0;
-  	align-items: center;
-  	justify-content: center;
-  	display: flex;
-	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  list-style: none;
+  text-decoration: none;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  transform-style: preserve-3d;
+  transition: transform .8s, font-size 0.4s;
+  color: #fff;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+  background-color: #2e3d49;
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
 .open {
@@ -85,7 +87,7 @@ body {
 }
 
 .shakeWrong {
-    animation: shake 0.5s ease;
+  animation: shake 0.5s ease;
 }
 
 .wrong {
@@ -107,7 +109,7 @@ body {
 }
 
 .shakeCorrect {
-    animation: shakeDistortion .5s ease;
+  animation: shakeDistortion .5s ease;
 }
 
 @keyframes shakeDistortion {
