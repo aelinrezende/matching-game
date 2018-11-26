@@ -4,6 +4,10 @@ let moves = 0;
 let opened = [], starsOut = 3;
 let timer, timerFinish = false, duration, seconds, minutes, display;
 
+// Iniciador
+callPositioner()
+verifyClick()
+
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
     while (currentIndex !== 0) {
@@ -24,10 +28,12 @@ function positioner(){
     shuffle(cardList).forEach(createCard);
 }
 
-// Iniciador
-positioner()
-positioner()
-verifyClick()
+
+function callPositioner(){
+	positioner()
+	positioner()
+}
+
 
 // estrelas
 function countStars(){
@@ -52,15 +58,15 @@ function countStars(){
 // verificando se a carta foi clicada
 function verifyClick() {
 	$('.card').click(function() {
-	if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
-		countStars()
-		$(this).addClass('open');
-	    opened.push($(this));
-	    if (opened.length % 2 == 0) {
-	        setTimeout(card_match, 500);
-	    }
-	}
-})
+		if(!($(this).hasClass('open') || $(this).hasClass('match')) && $('.open').length < 2){
+			countStars()
+			$(this).addClass('open');
+		    opened.push($(this));
+		    if (opened.length % 2 == 0) {
+		        setTimeout(card_match, 500);
+		    }
+		}
+	})
 };
 
 // Temporizador
@@ -144,14 +150,14 @@ function card_match() {
 	}).then(function(restart) {
 		if (restart) {
 			moves = minutes = seconds = timer = 0;
+			starsOut = 3;
 			timerFinish = false;
 			$('.card').removeClass('shakeCorrect match shakeWrong');
 			$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 			$('ul.stars').children('li').find('*').addClass('fa-star');
 			opened = [];
 			$('li').remove()
-			positioner()
-			positioner()
+			callPositioner()
 			verifyClick()
 		}
 	})
