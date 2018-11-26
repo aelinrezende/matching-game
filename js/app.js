@@ -91,11 +91,11 @@ function countStars(){
 		$('#Star3').addClass('fa-star-o');
 		$('#Star3').removeClass('fa-star');
 	}
-	if(moves === 11){
+	if(moves === 24){
 		starsOut = 1
 		$('#Star2').addClass('fa-star-o');
 		$('#Star2').removeClass('fa-star');
-	} if(moves === 14){
+	} if(moves === 34){
 		starsOut = 0
 		$('#Star1').addClass('fa-star-o');
 		$('#Star1').removeClass('fa-star');
