@@ -12,7 +12,7 @@ start()
 // Função que executa o modal inicial e outras funções para dar inicio ao jogo
 function start() {
 	swal({
-		title: "Welcome to the 'Memory Game'",
+		title: "Welcome to the 'Matching Game'",
 		buttons: "START",
 		allowOutsideClick: false,
 		closeOnClickOutside: false,
