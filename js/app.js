@@ -130,14 +130,8 @@ function card_match() {
     if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
     	moves++;
 		$('.moves').text(moves);
-    	opened[opened.length - 2].addClass('shakeCorrect').delay(200).queue(function( next ){
-	    $(this).toggleClass('shakeWrong');
-	    next();
-	});
-    	opened[opened.length - 1].addClass('shakeCorrect').delay(200).queue(function( next ){
-	    $(this).toggleClass('shakeWrong');
-	    next();
-	});
+    	opened[opened.length - 2].addClass('shakeCorrect')
+    	opened[opened.length - 1].addClass('shakeCorrect');
         opened[opened.length - 2].removeClass('open');
         opened[opened.length - 2].addClass('match');
         opened[opened.length - 1].removeClass('open');
@@ -145,19 +139,19 @@ function card_match() {
     } else {
     	moves++;
 		$('.moves').text(moves);
-        opened[opened.length - 1].addClass('shakeWrong wrong').delay(200).queue(function( next ){
+        opened[opened.length - 1].addClass('shakeWrong wrong').delay(100).queue(function( next ){
 	    $(this).toggleClass('shakeWrong');
 	    next();
 	});
-        opened[opened.length - 2].addClass('shakeWrong wrong').delay(200).queue(function( next ){
+        opened[opened.length - 2].addClass('shakeWrong wrong').delay(100).queue(function( next ){
 	    $(this).toggleClass('shakeWrong');
 	    next();
 	});
-        opened[opened.length - 1].delay(250).queue(function( next ){
+        opened[opened.length - 1].delay(150).queue(function( next ){
 	    $(this).toggleClass('open wrong');
 	    next();
 	});
-        opened[opened.length - 2].delay(250).queue(function( next ){
+        opened[opened.length - 2].delay(150).queue(function( next ){
 	    $(this).toggleClass('open wrong');
 	    next();
 	    opened.pop();
