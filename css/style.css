@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
 	background-image: url('../img/geometry2.png');
 	font-family: 'Montserrat', sans-serif;
-
 }
 
 .container {
@@ -57,8 +60,8 @@ body {
 .card {
   list-style: none;
   text-decoration: none;
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   margin: 5px;
   transform-style: preserve-3d;
   transition: transform .8s, font-size 0.4s;
