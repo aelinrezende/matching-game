@@ -50,11 +50,6 @@ body {
   cursor: pointer;
 }
 
-.test {
-  float: left;
-  cursor: pointer;
-}
-
 .grid {
 	flex-wrap: wrap;
 	display: flex;

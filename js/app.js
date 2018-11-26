@@ -112,17 +112,6 @@ $('.restart').click( function() {
 	opened = [];
 })
 
-// Função teste
-$('#TestMode').click(function () {
-	if (toggle === true) {
-		$('.card').css('font-size', '35px')
-		toggle = !toggle
-	} else {
-		$('.card').css('font-size', '0')
-		toggle = !toggle
-	}
-})
-
 // verificando se a carta foi clicada
 function verifyClick() {
 	$('.card').click(function() {
