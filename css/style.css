@@ -54,10 +54,9 @@ body {
 	display: flex;
 	width: 620px;
 	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-	padding: 25px;
+	padding: 30px;
 	border-radius: 10px;
   justify-content: center;
-
 }
 
 .card {
