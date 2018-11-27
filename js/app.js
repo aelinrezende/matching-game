@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const cardList = ['fa-birthday-cake', 'fa-send', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 const deck = [...cardList, ...cardList]
@@ -134,7 +134,7 @@ function cardMatch() {
     	opened[opened.length - 1].addClass('shakeCorrect match');
         opened[opened.length - 2].removeClass('open');
         opened[opened.length - 1].removeClass('open');
-    }
+    };
 }
 
 // verificando 'match' incorreto de cartas
@@ -196,7 +196,7 @@ function won() {
 
 // analizador
 function analyzer() {
-	cardMatch()
-	cardIncorrect()
-	won()
+	cardMatch();
+	cardIncorrect();
+	won();
 }
