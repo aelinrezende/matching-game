@@ -119,14 +119,14 @@ function verifyClick() {
 			$(this).addClass('open');
 		    opened.push($(this));
 		    if (opened.length % 2 == 0) {
-		        setTimeout(card_match, 500);
+		        setTimeout(analyzer, 500);
 		    };
 		};
 	});
 }
 
 // verificando 'match' de cartas
-function card_match() {
+function cardMatch() {
     if (opened[opened.length - 2].html() == opened[opened.length - 1].html()) {
     	moves++;
 		$('.moves').text(moves);
@@ -138,7 +138,6 @@ function card_match() {
 }
 
 // verificando 'match' incorreto de cartas
-
 function cardIncorrect() {
     if (opened[opened.length - 2].html() !== opened[opened.length - 1].html()) {
     	moves++;
@@ -166,7 +165,6 @@ function cardIncorrect() {
 }
 
 // vencendo o jogo
-
 function won() {
 	if (opened.length == 16) {
 	  		$( '.container' ).css('opacity', '0')
@@ -194,4 +192,11 @@ function won() {
 			};
 		});
 	};
+}
+
+// analizador
+function analyzer() {
+	cardMatch()
+	cardIncorrect()
+	won()
 }
