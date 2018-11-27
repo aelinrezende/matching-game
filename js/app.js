@@ -135,32 +135,6 @@ function card_match() {
         opened[opened.length - 2].removeClass('open');
         opened[opened.length - 1].removeClass('open');
     }
-  	if (opened.length == 16) {
-	  		$( '.container' ).css('opacity', '0')
-		  	timerFinish = true;
-			swal({
-			allowOutsideClick: false,
-			closeOnClickOutside: false,
-			allowEscapeKey: false,
-			title: 'Congratulations, You Won!',
-			text: `In ${minutes + ':' + seconds}, ${moves} Moves and ${starsOut} Stars`,
-			icon: 'success',
-			button: 'Restart',
-		}).then(function(restart) {
-			if (restart) {
-				$( '.container' ).css('opacity', '1');
-				$('.card').remove();
-				positioner();
-				verifyClick();
-				moves = minutes = seconds = timer = 0;
-				starsOut = 3;
-				timerFinish = false;
-				$('ul.stars').children('li').find('*').removeClass('fa-star-o');
-				$('ul.stars').children('li').find('*').addClass('fa-star');
-				opened = [];
-			};
-		});
-	};
 }
 
 // verificando 'match' incorreto de cartas
@@ -189,4 +163,35 @@ function cardIncorrect() {
 	});
 
     };
+}
+
+// vencendo o jogo
+
+function won() {
+	if (opened.length == 16) {
+	  		$( '.container' ).css('opacity', '0')
+		  	timerFinish = true;
+			swal({
+			allowOutsideClick: false,
+			closeOnClickOutside: false,
+			allowEscapeKey: false,
+			title: 'Congratulations, You Won!',
+			text: `In ${minutes + ':' + seconds}, ${moves} Moves and ${starsOut} Stars`,
+			icon: 'success',
+			button: 'Restart',
+		}).then(function(restart) {
+			if (restart) {
+				$( '.container' ).css('opacity', '1');
+				$('.card').remove();
+				positioner();
+				verifyClick();
+				moves = minutes = seconds = timer = 0;
+				starsOut = 3;
+				timerFinish = false;
+				$('ul.stars').children('li').find('*').removeClass('fa-star-o');
+				$('ul.stars').children('li').find('*').addClass('fa-star');
+				opened = [];
+			};
+		});
+	};
 }
