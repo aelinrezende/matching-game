@@ -1,3 +1,5 @@
+'use strict'
+
 const cardList = ['fa-birthday-cake', 'fa-send', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
 let timer, duration, seconds, minutes;
 let moves = 0, starsOut = 3;
