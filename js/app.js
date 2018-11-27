@@ -96,9 +96,16 @@ function countStars(){
 
 // restart
 $('.restart').click( function() {
+	$('.card').remove();
+	positioner();
+	verifyClick();
 	moves = minutes = seconds = timer = 0;
+	starsOut = 3;
 	timerFinish = false;
-	$('.card').removeClass('shakeCorrect match shakeWrong');
+	$('.grid').addClass('shakeRestart').delay(1000).queue(function( next ){
+	    $(this).toggleClass('shakeRestart');
+	    next();
+	});
 	$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 	$('ul.stars').children('li').find('*').addClass('fa-star');
 	opened = [];
@@ -172,7 +179,6 @@ function card_match() {
 				moves = minutes = seconds = timer = 0;
 				starsOut = 3;
 				timerFinish = false;
-				$('.card').removeClass('shakeCorrect match shakeWrong');
 				$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 				$('ul.stars').children('li').find('*').addClass('fa-star');
 				opened = [];
