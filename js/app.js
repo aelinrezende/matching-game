@@ -1,6 +1,7 @@
 'use strict'
 
 const cardList = ['fa-birthday-cake', 'fa-send', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-leaf', 'fa-bicycle', 'fa-bomb'];
+const deck = [...cardList, ...cardList]
 let timer, duration, seconds, minutes;
 let moves = 0, starsOut = 3;
 let timerFinish = false
@@ -22,7 +23,7 @@ function start() {
 	}).then((normalMode) => {
 		if (normalMode) {
 			$( '.container' ).css('opacity', '1');
-			callPositioner();
+			positioner();
 			verifyClick();
 			countdown();
 	  	};
@@ -49,13 +50,7 @@ function createCard(cardClass) {
 
 // Passando para função createCard um novo icone, para que se crie um novo card
 function positioner(){
-    shuffle(cardList).forEach(createCard);
-}
-
-// Chamando a função 'positioner' duas vezes
-function callPositioner(){
-	positioner();
-	positioner();
+    shuffle(deck).forEach(createCard);
 }
 
 // Temporizador
@@ -177,7 +172,7 @@ function card_match() {
 			if (restart) {
 				$( '.container' ).css('opacity', '1');
 				$('.card').remove();
-				callPositioner();
+				positioner();
 				verifyClick();
 				moves = minutes = seconds = timer = 0;
 				starsOut = 3;
