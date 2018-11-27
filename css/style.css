@@ -128,6 +128,10 @@ body {
 
 }
 
+.shakeRestart {
+  animation: shakeDistortion 1s ease;
+}
+
 @media screen and (max-width: 720px) {
   .grid {
     width: 500px;
