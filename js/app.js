@@ -106,6 +106,7 @@ $('.restart').click( function() {
 	    $(this).toggleClass('shakeRestart');
 	    next();
 	});
+	$( "span.moves" ).text( "0" );
 	$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 	$('ul.stars').children('li').find('*').addClass('fa-star');
 	opened = [];
@@ -186,6 +187,7 @@ function won() {
 				moves = minutes = seconds = timer = 0;
 				starsOut = 3;
 				timerFinish = false;
+				$( "span.moves" ).text( "0" );
 				$('ul.stars').children('li').find('*').removeClass('fa-star-o');
 				$('ul.stars').children('li').find('*').addClass('fa-star');
 				opened = [];
