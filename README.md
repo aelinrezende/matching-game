@@ -4,7 +4,7 @@
 
 ## Download
 
-Faça o download do jogo clicando no botão "Clone or download" ou clique [aqui](https://github.com/MarcoRezende/matching-game/archive/master.zip).
+Faça o download do jogo clicando no botão "Clone or download" ou clique [aqui](https://github.com/aelinrezende/matching-game/archive/master.zip).
 
 ## Jogue agora
 
